@@ -12,6 +12,7 @@ require('./init/sessions')(server)
 
 var placeService = require('./services/places')
 var tourService = require('./services/tours')
+var userService = require('./services/users')
 
 server
   .use(cors({ 
@@ -23,6 +24,7 @@ server
   .configure(feathers.rest())
   .use('/places', placeService)
   .use('/tours', tourService)
+  .use('/users', userService)
   .configure(feathers.errors())
 
 module.exports = server
